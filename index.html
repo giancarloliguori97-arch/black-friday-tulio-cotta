@@ -32,7 +32,7 @@ img{max-width:100%;display:block;height:auto}
 .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
 .narrow{max-width:780px}
 section{position:relative;padding:88px 0}
-h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+h1,h2,h3{text-wrap:balance;font-family:"Playfair Display",Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
 .gold{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 em{font-style:italic}
 strong{font-weight:700;color:#fff}
@@ -47,6 +47,7 @@ strong{font-weight:700;color:#fff}
 .band-green{background:linear-gradient(180deg,var(--green) 0%,#07140d 100%)}
 
 /* buttons */
+button.btn{font-family:Montserrat,sans-serif}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:62px;padding:18px 34px;border:0;border-radius:999px;cursor:pointer;
   font:800 16px/1.2 Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;text-align:center;color:#1a1206;
   background:var(--grad);background-size:200% 100%;box-shadow:0 0 0 1px rgba(255,236,190,.4) inset,0 10px 40px -8px rgba(227,184,102,.55);
@@ -58,33 +59,48 @@ strong{font-weight:700;color:#fff}
 .btn svg{width:22px;height:22px;flex:none}
 
 /* HERO */
-.hero{padding:40px 0 80px;text-align:center}
-.hero .logo{width:min(520px,88%);margin:0 auto 18px;filter:drop-shadow(0 10px 40px rgba(227,184,102,.25))}
-.hero h1{font-size:clamp(30px,5.2vw,54px);max-width:900px;margin:0 auto}
+.hero{padding:22px 0 72px;text-align:center}
+.hero .logo{width:min(250px,60%);margin:0 auto 10px;filter:drop-shadow(0 10px 40px rgba(227,184,102,.25))}
+.hero h1{font-size:clamp(26px,2.9vw,38px);max-width:980px;margin:0 auto}
 .hero h1 em{display:block}
-.hero .sub{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:720px;margin:22px auto 0}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;margin-top:48px;text-align:left}
+.hero .sub{font-size:clamp(15px,1.4vw,18px);color:var(--muted);max-width:780px;margin:12px auto 0}
+.hero-stack{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:22px}
+.hero-checks{order:1}
+.hero-cta{order:2;display:flex;flex-direction:column;align-items:center;gap:6px}
+.date-line{font-size:clamp(16px,1.7vw,20px);font-weight:600}
+.date-line b{color:var(--gold-light)}
+.cad-line{font-size:clamp(14px,1.4vw,17px);color:var(--muted);max-width:520px}
+.hero-cta .btn{margin-top:8px;min-width:min(420px,100%);min-height:58px}
 .date-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border:1px solid rgba(227,184,102,.45);border-radius:999px;background:rgba(227,184,102,.07);font-weight:600;font-size:15px}
 .date-pill b{color:var(--gold-light)}
 
-/* FORM CARD */
-.card-form{position:relative;padding:34px 30px;border-radius:24px;background:linear-gradient(160deg,#122a1c 0%,#0a120d 60%,#0a0a09 100%);
-  box-shadow:0 0 0 1px rgba(227,184,102,.35),0 30px 80px -20px rgba(0,0,0,.9)}
-.card-form::before{content:"";position:absolute;inset:-1px;border-radius:25px;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.8}
-.card-form h3{font-size:24px;text-align:center;margin-bottom:6px}
+/* POP-UP */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.open{display:flex;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.card-form{position:relative;width:100%;max-width:460px;max-height:calc(100vh - 32px);overflow:auto;padding:38px 30px 30px;border-radius:24px;background:linear-gradient(160deg,#122a1c 0%,#0a120d 60%,#0a0a09 100%);
+  box-shadow:0 0 0 1px rgba(227,184,102,.45),0 30px 80px -20px rgba(0,0,0,.9);animation:popIn .3s ease}
+.modal-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.modal-close:hover{background:rgba(255,255,255,.16)}
+.card-form h3{font-size:24px;text-align:center;margin:6px 0 6px;padding:0 26px}
 .card-form p.lead{text-align:center;color:var(--muted);font-size:15px;margin-bottom:22px}
+.card-form p.lead b{color:var(--gold-light)}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:13px;font-weight:600;color:var(--gold-light);margin-bottom:6px;letter-spacing:.03em}
-.field input{width:100%;height:56px;padding:0 18px;border-radius:12px;border:1px solid rgba(227,184,102,.28);background:rgba(0,0,0,.45);color:#fff;font:500 16px Montserrat,sans-serif;outline:none;transition:border .2s,box-shadow .2s}
+.field input{width:100%;height:54px;padding:0 18px;border-radius:12px;border:1px solid rgba(227,184,102,.28);background:rgba(0,0,0,.45);color:#fff;font:500 16px Montserrat,sans-serif;outline:none;transition:border .2s,box-shadow .2s}
 .field input::placeholder{color:#7d766a}
 .field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,184,102,.2)}
 .form-note{font-size:12.5px;color:#8e877a;text-align:center;margin-top:14px;line-height:1.5}
 .form-msg{display:none;font-size:14px;color:#ffb4a2;text-align:center;margin-top:10px}
+body.lock{overflow:hidden}
 
 /* CHECKS */
 .checks{display:grid;gap:14px}
 .checks img{width:100%;max-width:560px;border-radius:14px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.6))}
 .checks.center-col img{margin:0 auto}
+.hero-checks{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 12px;max-width:900px}
+.hero-checks img{width:270px;max-width:100%;border-radius:12px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
 
 /* SECTION TITLES */
 .sec-title{font-size:clamp(28px,4.4vw,46px);text-align:center;max-width:860px;margin:0 auto}
@@ -120,11 +136,23 @@ strong{font-weight:700;color:#fff}
 .forno p{color:var(--muted);font-size:18px;margin-top:18px}
 
 /* BONUS */
-.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-.bonus{padding:34px 26px;border-radius:var(--radius);text-align:center;background:linear-gradient(170deg,#132b1d,#0a0f0c);box-shadow:0 0 0 1px rgba(227,184,102,.25)}
-.bonus .ico{font-size:40px;line-height:1;margin-bottom:16px}
-.bonus h3{font-size:21px}
-.bonus p{color:var(--muted);font-size:15px;margin-top:10px}
+.bonus-sec{position:relative;overflow:hidden;padding:100px 0;background:
+  radial-gradient(ellipse 55% 45% at 50% 0%,rgba(227,184,102,.28),transparent 70%),
+  radial-gradient(ellipse 40% 40% at 0% 100%,rgba(30,74,46,.6),transparent 70%),
+  radial-gradient(ellipse 40% 40% at 100% 100%,rgba(30,74,46,.6),transparent 70%),#070806}
+.bonus-sec::before,.bonus-sec::after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--grad)}
+.bonus-sec::before{top:0}.bonus-sec::after{bottom:0}
+.bonus-badge{display:inline-block;padding:9px 20px;border-radius:999px;background:var(--grad);color:#1a1206;font-weight:800;font-size:13px;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 10px 30px -8px rgba(227,184,102,.6)}
+.bonus-title{font-size:clamp(38px,6.6vw,76px);line-height:1.05;margin:22px auto 0;max-width:1000px;text-align:center;text-wrap:balance}
+.bonus-title em{display:block;font-size:1.08em;filter:drop-shadow(0 0 30px rgba(227,184,102,.45))}
+.bonus-intro{text-align:center;color:var(--muted);font-size:clamp(16px,1.8vw,19px);max-width:640px;margin:20px auto 0}
+.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
+.bonus{position:relative;padding:44px 28px 34px;border-radius:22px;text-align:center;background:linear-gradient(170deg,#173521,#0a0f0c);box-shadow:0 0 0 1px rgba(227,184,102,.45),0 24px 60px -24px rgba(227,184,102,.45);transition:transform .3s}
+.bonus:hover{transform:translateY(-6px)}
+.bonus .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:6px 16px;border-radius:999px;background:var(--grad);color:#1a1206;font-weight:800;font-size:12px;letter-spacing:.16em;white-space:nowrap}
+.bonus .ico{font-size:52px;line-height:1;margin-bottom:18px}
+.bonus h3{font-size:25px}
+.bonus p{color:#d8d0c2;font-size:16px;margin-top:12px}
 
 /* GROUP CTA */
 .group-cta{text-align:center;padding:56px 32px;border-radius:28px;background:radial-gradient(ellipse at top,rgba(227,184,102,.16),transparent 65%),#0b0b0a;box-shadow:0 0 0 1px rgba(227,184,102,.35)}
@@ -158,11 +186,10 @@ footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;borde
 /* RESPONSIVE */
 @media (max-width:900px){
   section{padding:64px 0}
-  .hero-grid,.forno,.prof{grid-template-columns:1fr;gap:36px}
-  .hero-grid{text-align:center}
-  .checks img{margin:0 auto}
+  .forno,.prof{grid-template-columns:1fr;gap:36px}
   .gallery{grid-template-columns:repeat(2,1fr);gap:12px}
-  .bonus-grid{grid-template-columns:1fr}
+  .bonus-grid{grid-template-columns:1fr;gap:30px}
+  .bonus-sec{padding:72px 0}
   .timeline::before{left:10px}
   .tl-item{grid-template-columns:1fr;gap:18px;padding-left:36px;margin-bottom:48px}
   .tl-item::after{left:10px;top:12px}
@@ -174,13 +201,24 @@ footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;borde
   .forno .poster{max-width:420px;margin:0 auto}
   .forno{text-align:center}
   .sticky.show{display:block}
+  /* primeira dobra no celular: data + botão antes dos banners */
+  .hero{padding:18px 0 56px}
+  .hero .logo{width:min(230px,62%);margin-bottom:8px}
+  .hero-stack{gap:24px;margin-top:20px}
+  .hero-cta{order:1;width:100%}
+  .hero-checks{order:2;flex-direction:column;align-items:center;gap:10px}
+  .hero-checks img{width:300px}
+  .hero-cta .btn{width:100%;min-width:0}
 }
 @media (max-width:480px){
   body{font-size:16px}
   .wrap{padding:0 16px}
-  .card-form{padding:28px 20px}
+  .card-form{padding:36px 20px 24px}
   .group-cta{padding:40px 20px}
   .btn{padding:16px 22px;font-size:14.5px}
+  .hero h1{font-size:24px}
+  .hero .sub{font-size:15px;margin-top:12px}
+  .hero-checks img{width:84%}
 }
 </style>
 </head>
@@ -193,27 +231,18 @@ footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;borde
     <h1>Todas as minhas formações atuais. Todas as que eu ainda vou lançar. <em class="gold">Com acesso pra sempre e um desconto histórico.</em></h1>
     <p class="sub">Tudo para você se tornar a profissional da beleza mais reconhecida e bem paga da sua cidade, e estar um passo à frente das demais, <strong class="caps">pra sempre!</strong></p>
 
-    <div class="hero-grid">
-      <div class="checks">
+    <div class="hero-stack">
+      <div class="hero-cta">
+        <p class="date-line">📌 <b>Abertura Oficial:</b> 04 de Novembro, Ao Vivo às 20h</p>
+        <p class="cad-line">Cadastre-se e participe da Live de Lançamento para benefícios extras:</p>
+        <button type="button" class="btn pulse js-open">Quero participar</button>
+      </div>
+      <div class="hero-checks">
         <img src="img/check-reconstrucao.webp" alt="Reconstrução 360º Brows" width="899" height="219">
         <img src="img/check-formacoes.webp" alt="Fio-a-fio, despigmentação, micro labial, design e posicionamento" width="899" height="254">
         <img src="img/check-futuras.webp" alt="Todas as formações online que eu lançar daqui pra frente" width="899" height="286">
         <img src="img/check-kit.webp" alt="Kit 360º de presente na sua casa" width="899" height="254">
         <img src="img/check-fracao.webp" alt="Por uma fração do que custaria comprar cada formação separada" width="899" height="254">
-      </div>
-
-      <div id="cadastro" class="card-form">
-        <div class="center" style="margin-bottom:18px"><span class="date-pill">📌 <span>Abertura Oficial: <b>04 de Novembro, Ao Vivo às 20h</b></span></span></div>
-        <h3 class="gold">Cadastre-se e participe da Live de Lançamento</h3>
-        <p class="lead">para garantir benefícios extras</p>
-        <form id="leadForm" novalidate>
-          <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Como você se chama?" required></div>
-          <div class="field"><label for="f-email">Seu melhor e-mail</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" required></div>
-          <div class="field"><label for="f-tel">WhatsApp com DDD</label><input id="f-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(31) 99999-9999" required></div>
-          <button class="btn block pulse" type="submit" id="f-btn">Quero participar</button>
-          <div class="form-msg" id="f-msg"></div>
-          <p class="form-note">🔒 Seus dados estão seguros. Depois do cadastro você entra no grupo, onde eu vou mandar o link da live.</p>
-        </form>
       </div>
     </div>
   </div>
@@ -283,28 +312,26 @@ footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;borde
       <p class="eyebrow">Em breve</p>
       <h2 style="margin-top:12px">Todas as formações online que eu lançar daqui pra frente. <em class="gold">A próxima já está no forno:</em></h2>
       <p><strong>Brow Lamination com Nutrição Folicular.</strong> Quando ela chegar, você já vai estar dentro, sem pagar de novo.</p>
-      <div style="margin-top:30px"><a href="#cadastro" class="btn">Quero aprender com você pra sempre</a></div>
+      <div style="margin-top:30px"><button type="button" class="btn js-open">Quero aprender com você pra sempre</button></div>
     </div>
   </div>
 </section>
 
 <!-- ============ BÔNUS AO VIVO ============ -->
-<section class="glow-green">
+<section class="bonus-sec">
   <div class="wrap">
-    <div class="center reveal"><span class="date-pill">📌 <span>Abertura Oficial: <b>04 de Novembro, Ao Vivo às 20h</b></span></span></div>
-    <h2 class="sec-title reveal" style="margin-top:24px">Bônus incríveis para quem estiver <em class="gold">Ao Vivo:</em></h2>
+    <div class="center reveal"><span class="bonus-badge">Exclusivo da live</span></div>
+    <h2 class="bonus-title reveal">Bônus incríveis para quem estiver <em class="gold">Ao Vivo</em></h2>
+    <p class="bonus-intro reveal">Esses presentes são só para quem estiver comigo na live de abertura. Depois, não se repetem.</p>
     <div class="bonus-grid">
-      <div class="bonus reveal"><div class="ico">🎁</div><h3 class="gold">Kit presente</h3><p>O Kit 360º chegando de presente na sua casa.</p></div>
-      <div class="bonus reveal"><div class="ico">🏷️</div><h3 class="gold">Desconto de aluna</h3><p>Desconto nos meus produtos, pra sempre.</p></div>
-      <div class="bonus reveal"><div class="ico">🤝</div><h3 class="gold">Suporte e certificado</h3><p>Meu suporte e o da minha equipe, lives comigo e certificado assinado por mim.</p></div>
+      <div class="bonus reveal"><span class="tag">BÔNUS 01</span><div class="ico">🎁</div><h3 class="gold">Kit presente</h3><p>O Kit 360º chegando de presente na sua casa.</p></div>
+      <div class="bonus reveal"><span class="tag">BÔNUS 02</span><div class="ico">🏷️</div><h3 class="gold">Desconto de aluna</h3><p>Desconto nos meus produtos, pra sempre.</p></div>
+      <div class="bonus reveal"><span class="tag">BÔNUS 03</span><div class="ico">🤝</div><h3 class="gold">Suporte e certificado</h3><p>Meu suporte e o da minha equipe, lives comigo e certificado assinado por mim.</p></div>
     </div>
 
-    <div class="group-cta reveal" style="margin-top:56px">
+    <div class="group-cta reveal" style="margin-top:64px">
       <p>Se você quer estar um passo à frente, pra sempre, entre no grupo. <strong class="gold">Lá, e somente lá,</strong> eu vou mandar o link da live e todos os detalhes da oferta.</p>
-      <a href="#" class="btn pulse js-group" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>
-        Entrar no grupo
-      </a>
+      <button type="button" class="btn pulse js-open">Entrar no grupo</button>
     </div>
   </div>
 </section>
@@ -334,7 +361,7 @@ footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;borde
     <img class="logo" src="img/logo-black-infinita.webp" alt="Black Infinita" width="1100" height="550" loading="lazy">
     <h2 class="sec-title">Você um passo à frente. <em class="gold">Pra sempre.</em></h2>
     <p class="sec-sub">📌 Abertura Oficial: <strong>04 de Novembro, Ao Vivo às 20h</strong></p>
-    <div style="margin-top:34px"><a href="#cadastro" class="btn pulse">Quero aprender com você pra sempre</a></div>
+    <div style="margin-top:34px"><button type="button" class="btn pulse js-open">Quero aprender com você pra sempre</button></div>
   </div>
 </section>
 
@@ -342,27 +369,48 @@ footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;borde
   <div class="wrap">© 2026 Túlio Cotta. Todos os direitos reservados.</div>
 </footer>
 
-<div class="sticky" id="sticky"><a href="#cadastro" class="btn">Quero participar</a></div>
+<div class="sticky" id="sticky"><button type="button" class="btn js-open">Quero participar</button></div>
+
+<!-- ============ POP-UP DE CADASTRO ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="card-form">
+    <button type="button" class="modal-close" aria-label="Fechar">&times;</button>
+    <h3 class="gold" id="modal-title">Cadastre-se e participe da Live de Lançamento</h3>
+    <p class="lead">📌 <b>04 de Novembro, Ao Vivo às 20h</b><br>para garantir benefícios extras</p>
+    <form id="leadForm" novalidate>
+      <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Como você se chama?" required></div>
+      <div class="field"><label for="f-email">Seu melhor e-mail</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" required></div>
+      <div class="field"><label for="f-tel">WhatsApp com DDD</label><input id="f-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(31) 99999-9999" required></div>
+      <button class="btn block pulse" type="submit" id="f-btn">Quero participar</button>
+      <div class="form-msg" id="f-msg"></div>
+      <p class="form-note">🔒 Seus dados estão seguros.</p>
+    </form>
+  </div>
+</div>
 
 <script>
-/* ===================== CONFIGURAÇÃO =====================
-   GROUP_URL:   link do grupo (WhatsApp/Telegram) para onde a pessoa vai depois do cadastro
-   WEBHOOK_URL: endpoint que recebe os leads (ActiveCampaign, RD, n8n, Make, Zapier...).
-                Deixe vazio para só redirecionar ao grupo.                          */
+/* ===================== CONFIGURAÇÃO ===================== */
 var CONFIG = {
-  GROUP_URL:   "#GRUPO",
-  WEBHOOK_URL: ""
+  LEAD_ENDPOINT: "/api/lead",   // função na Vercel que repassa para os 2 webhooks
+  THANK_YOU_URL: "https://pesquisa-black-infinita-tulio-cotta.lovable.app/"
 };
 /* ======================================================== */
 
 (function(){
-  // links do grupo
-  document.querySelectorAll('.js-group').forEach(function(a){ a.href = CONFIG.GROUP_URL; });
-
-  // UTMs
+  // UTMs e parâmetros de campanha
   var params = new URLSearchParams(location.search);
   var utm = {};
-  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){ if(params.get(k)) utm[k]=params.get(k); });
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','src','sck','fbclid','gclid'].forEach(function(k){ if(params.get(k)) utm[k]=params.get(k); });
+
+  // pop-up
+  var modal = document.getElementById('modal');
+  var nomeInput = document.getElementById('f-nome');
+  function openModal(){ modal.classList.add('open'); document.body.classList.add('lock'); setTimeout(function(){ try{ nomeInput.focus({preventScroll:true}); }catch(_){ } }, 250); }
+  function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('lock'); }
+  document.querySelectorAll('.js-open').forEach(function(b){ b.addEventListener('click', openModal); });
+  modal.querySelector('.modal-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
 
   // máscara de telefone (BR)
   var tel = document.getElementById('f-tel');
@@ -377,7 +425,7 @@ var CONFIG = {
   var form = document.getElementById('leadForm'), btn = document.getElementById('f-btn'), msg = document.getElementById('f-msg');
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var nome = form.nome.value.trim(), email = form.email.value.trim(), fone = form.telefone.value.replace(/\D/g,'');
+    var nome = form.nome.value.trim(), email = form.email.value.trim().toLowerCase(), fone = form.telefone.value.replace(/\D/g,'');
     var err = '';
     if(nome.length<2) err='Digite seu nome.';
     else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) err='Digite um e-mail válido.';
@@ -386,15 +434,18 @@ var CONFIG = {
     msg.style.display='none';
     btn.disabled=true; btn.textContent='Enviando...';
 
-    var lead = Object.assign({nome:nome,email:email,telefone:fone,pagina:location.href}, utm);
+    var lead = Object.assign({
+      nome:nome, email:email, telefone:fone, telefone_completo:'55'+fone,
+      pagina:location.origin+location.pathname, data_cadastro:new Date().toISOString()
+    }, utm);
+
     try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
     try{ (window.dataLayer=window.dataLayer||[]).push({event:'lead_black_infinita'}); }catch(_){}
 
-    var go = function(){ location.href = CONFIG.GROUP_URL; };
-    if(!CONFIG.WEBHOOK_URL){ go(); return; }
-    var done=false, finish=function(){ if(!done){ done=true; go(); } };
-    fetch(CONFIG.WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead),keepalive:true}).then(finish,finish);
-    setTimeout(finish, 2500);
+    var url = CONFIG.THANK_YOU_URL + (CONFIG.THANK_YOU_URL.indexOf('?')>-1?'&':'?') + 'email=' + encodeURIComponent(email);
+    var done=false, go=function(){ if(!done){ done=true; location.href=url; } };
+    fetch(CONFIG.LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead),keepalive:true}).then(go,go);
+    setTimeout(go, 4000);
   });
 
   // reveal on scroll
@@ -404,11 +455,10 @@ var CONFIG = {
     els.forEach(function(el){ io.observe(el); });
   } else els.forEach(function(el){ el.classList.add('in'); });
 
-  // sticky CTA no mobile (aparece depois do hero, some perto do formulário)
-  var sticky = document.getElementById('sticky'), card = document.getElementById('cadastro');
+  // botão fixo no celular: aparece depois do botão da primeira dobra
+  var sticky = document.getElementById('sticky'), heroBtn = document.querySelector('.hero-cta .btn');
   window.addEventListener('scroll', function(){
-    var r = card.getBoundingClientRect();
-    sticky.classList.toggle('show', window.scrollY > 600 && (r.bottom < 0 || r.top > window.innerHeight));
+    sticky.classList.toggle('show', heroBtn.getBoundingClientRect().bottom < 0);
   }, {passive:true});
 })();
 </script>
