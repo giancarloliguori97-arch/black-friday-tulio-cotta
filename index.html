@@ -102,6 +102,18 @@ button.btn{font-family:Montserrat,sans-serif}
 .field input{width:100%;height:54px;padding:0 18px;border-radius:12px;border:1px solid rgba(227,184,102,.28);background:rgba(0,0,0,.45);color:#fff;font:500 16px Montserrat,sans-serif;outline:none;transition:border .2s,box-shadow .2s}
 .field input::placeholder{color:#7d766a}
 .field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,184,102,.2)}
+.phone{position:relative;display:flex;gap:8px}
+.phone input{flex:1;min-width:0}
+.ddi-btn{flex:none;display:flex;align-items:center;gap:7px;height:54px;padding:0 12px;border-radius:12px;border:1px solid rgba(227,184,102,.28);background:rgba(0,0,0,.45);color:#fff;font:600 15px Montserrat,sans-serif;cursor:pointer}
+.ddi-btn:focus-visible,.ddi-btn[aria-expanded="true"]{border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,184,102,.2);outline:none}
+.flag{display:inline-flex;width:24px;height:17px;flex:none}
+.flag svg{width:100%;height:100%;border-radius:2px}
+.caret{font-size:11px;color:var(--gold-light)}
+.ddi-menu{display:none;position:absolute;top:60px;left:0;z-index:5;min-width:210px;list-style:none;padding:6px;border-radius:12px;background:#0d1a12;box-shadow:0 0 0 1px rgba(227,184,102,.4),0 18px 40px -10px rgba(0,0,0,.9)}
+.ddi-menu.open{display:block}
+.ddi-menu li{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:8px;cursor:pointer;font-size:15px}
+.ddi-menu li b{margin-left:auto;color:var(--gold-light)}
+.ddi-menu li:hover,.ddi-menu li[aria-selected="true"]{background:rgba(227,184,102,.12)}
 .form-note{font-size:12.5px;color:#8e877a;text-align:center;margin-top:14px;line-height:1.5}
 .form-msg{display:none;font-size:14px;color:#ffb4a2;text-align:center;margin-top:10px}
 body.lock{overflow:hidden}
@@ -391,7 +403,18 @@ footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;borde
     <form id="leadForm" novalidate>
       <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Como você se chama?" required></div>
       <div class="field"><label for="f-email">Seu melhor e-mail</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" required></div>
-      <div class="field"><label for="f-tel">WhatsApp com DDD</label><input id="f-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(31) 99999-9999" required></div>
+      <div class="field"><label for="f-tel" id="tel-label">WhatsApp com DDD</label>
+        <div class="phone">
+          <button type="button" class="ddi-btn" id="ddi-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Escolher país">
+            <span class="flag" id="ddi-flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#009B3A"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10Z" fill="#FEDF00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.9.9" stroke="#fff" stroke-width=".9" fill="none"/></svg></span><span id="ddi-code">+55</span><span class="caret">▾</span>
+          </button>
+          <ul class="ddi-menu" id="ddi-menu" role="listbox">
+            <li role="option" data-c="BR" aria-selected="true"><span class="flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#009B3A"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10Z" fill="#FEDF00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.9.9" stroke="#fff" stroke-width=".9" fill="none"/></svg></span>Brasil <b>+55</b></li>
+            <li role="option" data-c="PT" aria-selected="false"><span class="flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#FF0000"/><path d="M2 0h9.2v20H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2Z" fill="#006600"/><circle cx="11.2" cy="10" r="4" fill="#FFCC00"/><circle cx="11.2" cy="10" r="2.3" fill="#FF0000"/><circle cx="11.2" cy="10" r="1.3" fill="#fff"/></svg></span>Portugal <b>+351</b></li>
+          </ul>
+          <input id="f-tel" name="telefone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="(31) 99999-9999" required>
+        </div>
+      </div>
       <button class="btn block pulse" type="submit" id="f-btn">Quero participar</button>
       <div class="form-msg" id="f-msg"></div>
       <p class="form-note">🔒 Seus dados estão seguros.</p>
@@ -423,15 +446,30 @@ var CONFIG = {
   modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
 
-  // máscara de telefone (BR)
-  var tel = document.getElementById('f-tel');
-  tel.addEventListener('input', function(){
-    var v = tel.value.replace(/\D/g,'').slice(0,11);
-    if(v.length>10) tel.value='('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
-    else if(v.length>6) tel.value='('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);
-    else if(v.length>2) tel.value='('+v.slice(0,2)+') '+v.slice(2);
-    else tel.value=v;
-  });
+  // DDI (Brasil / Portugal) e máscara de telefone
+  var COUNTRIES = {
+    BR:{ddi:'55', label:'WhatsApp com DDD', ph:'(31) 99999-9999', min:10, max:11, err:'Digite seu WhatsApp com DDD.',
+        mask:function(v){ if(v.length>10) return '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7); if(v.length>6) return '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6); if(v.length>2) return '('+v.slice(0,2)+') '+v.slice(2); return v; }},
+    PT:{ddi:'351', label:'Telemóvel / WhatsApp', ph:'912 345 678', min:9, max:9, err:'Digite seu número com 9 dígitos.',
+        mask:function(v){ if(v.length>6) return v.slice(0,3)+' '+v.slice(3,6)+' '+v.slice(6); if(v.length>3) return v.slice(0,3)+' '+v.slice(3); return v; }}
+  };
+  var country = 'BR';
+  var tel = document.getElementById('f-tel'), ddiBtn = document.getElementById('ddi-btn'), ddiMenu = document.getElementById('ddi-menu');
+  function applyMask(){ var c=COUNTRIES[country]; tel.value = c.mask(tel.value.replace(/\D/g,'').slice(0,c.max)); }
+  function setCountry(code){
+    country = code; var c = COUNTRIES[code];
+    document.getElementById('ddi-code').textContent = '+'+c.ddi;
+    document.getElementById('ddi-flag').innerHTML = ddiMenu.querySelector('[data-c="'+code+'"] .flag').innerHTML;
+    document.getElementById('tel-label').textContent = c.label;
+    tel.placeholder = c.ph;
+    ddiMenu.querySelectorAll('li').forEach(function(li){ li.setAttribute('aria-selected', li.dataset.c===code ? 'true':'false'); });
+    applyMask();
+  }
+  function toggleMenu(open){ ddiMenu.classList.toggle('open', open); ddiBtn.setAttribute('aria-expanded', open?'true':'false'); }
+  ddiBtn.addEventListener('click', function(e){ e.stopPropagation(); toggleMenu(!ddiMenu.classList.contains('open')); });
+  ddiMenu.querySelectorAll('li').forEach(function(li){ li.addEventListener('click', function(){ setCountry(li.dataset.c); toggleMenu(false); tel.focus(); }); });
+  document.addEventListener('click', function(){ toggleMenu(false); });
+  tel.addEventListener('input', applyMask);
 
   var form = document.getElementById('leadForm'), btn = document.getElementById('f-btn'), msg = document.getElementById('f-msg');
   form.addEventListener('submit', function(e){
@@ -440,13 +478,13 @@ var CONFIG = {
     var err = '';
     if(nome.length<2) err='Digite seu nome.';
     else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) err='Digite um e-mail válido.';
-    else if(fone.length<10) err='Digite seu WhatsApp com DDD.';
+    else if(fone.length<COUNTRIES[country].min || fone.length>COUNTRIES[country].max) err=COUNTRIES[country].err;
     if(err){ msg.textContent=err; msg.style.display='block'; return; }
     msg.style.display='none';
     btn.disabled=true; btn.textContent='Enviando...';
 
     var lead = Object.assign({
-      nome:nome, email:email, telefone:fone, telefone_completo:'55'+fone,
+      nome:nome, email:email, telefone:fone, telefone_completo:COUNTRIES[country].ddi+fone,
       pagina:location.origin+location.pathname, data_cadastro:new Date().toISOString()
     }, utm);
 
