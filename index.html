@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Infinita | Túlio Cotta</title>
+<meta name="description" content="Todas as formações atuais e futuras do Túlio Cotta, com acesso pra sempre. Abertura oficial ao vivo em 04 de novembro, às 20h.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Black Infinita | Túlio Cotta">
+<meta property="og:description" content="Você um passo à frente. Pra sempre. Live de abertura: 04/11, 20h.">
+<meta property="og:image" content="img/logo-black-infinita.webp">
+<meta name="theme-color" content="#050505">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/logo-black-infinita.webp">
+
+<!-- ===== RASTREAMENTO: cole aqui o Pixel / GTM ===== -->
+
+<style>
+:root{
+  --bg:#050505; --bg2:#0b0b0a; --green:#0e2318; --green2:#16321f;
+  --gold:#e3b866; --gold-light:#f6dfa4; --gold-dark:#a8772c;
+  --text:#f1ece2; --muted:#b9b0a0;
+  --grad: linear-gradient(100deg,#a8772c 0%,#f6dfa4 35%,#e3b866 55%,#fff1c8 72%,#b9852f 100%);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Montserrat,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:780px}
+section{position:relative;padding:88px 0}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+.gold{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+em{font-style:italic}
+strong{font-weight:700;color:#fff}
+.caps{text-transform:uppercase;letter-spacing:.04em}
+.center{text-align:center}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.divider{height:1px;width:140px;margin:22px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* glow backgrounds */
+.glow-green{background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(30,74,46,.55),transparent 70%),var(--bg)}
+.glow-gold{background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(227,184,102,.12),transparent 70%),var(--bg2)}
+.band-green{background:linear-gradient(180deg,var(--green) 0%,#07140d 100%)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:62px;padding:18px 34px;border:0;border-radius:999px;cursor:pointer;
+  font:800 16px/1.2 Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;text-align:center;color:#1a1206;
+  background:var(--grad);background-size:200% 100%;box-shadow:0 0 0 1px rgba(255,236,190,.4) inset,0 10px 40px -8px rgba(227,184,102,.55);
+  transition:background-position .5s,transform .2s,box-shadow .2s}
+.btn:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,236,190,.6) inset,0 16px 50px -8px rgba(227,184,102,.75)}
+.btn.block{width:100%}
+.btn.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 1px rgba(255,236,190,.4) inset,0 0 0 0 rgba(227,184,102,.5)}50%{box-shadow:0 0 0 1px rgba(255,236,190,.4) inset,0 0 0 14px rgba(227,184,102,0)}}
+.btn svg{width:22px;height:22px;flex:none}
+
+/* HERO */
+.hero{padding:40px 0 80px;text-align:center}
+.hero .logo{width:min(520px,88%);margin:0 auto 18px;filter:drop-shadow(0 10px 40px rgba(227,184,102,.25))}
+.hero h1{font-size:clamp(30px,5.2vw,54px);max-width:900px;margin:0 auto}
+.hero h1 em{display:block}
+.hero .sub{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:720px;margin:22px auto 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;margin-top:48px;text-align:left}
+.date-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border:1px solid rgba(227,184,102,.45);border-radius:999px;background:rgba(227,184,102,.07);font-weight:600;font-size:15px}
+.date-pill b{color:var(--gold-light)}
+
+/* FORM CARD */
+.card-form{position:relative;padding:34px 30px;border-radius:24px;background:linear-gradient(160deg,#122a1c 0%,#0a120d 60%,#0a0a09 100%);
+  box-shadow:0 0 0 1px rgba(227,184,102,.35),0 30px 80px -20px rgba(0,0,0,.9)}
+.card-form::before{content:"";position:absolute;inset:-1px;border-radius:25px;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.8}
+.card-form h3{font-size:24px;text-align:center;margin-bottom:6px}
+.card-form p.lead{text-align:center;color:var(--muted);font-size:15px;margin-bottom:22px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--gold-light);margin-bottom:6px;letter-spacing:.03em}
+.field input{width:100%;height:56px;padding:0 18px;border-radius:12px;border:1px solid rgba(227,184,102,.28);background:rgba(0,0,0,.45);color:#fff;font:500 16px Montserrat,sans-serif;outline:none;transition:border .2s,box-shadow .2s}
+.field input::placeholder{color:#7d766a}
+.field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,184,102,.2)}
+.form-note{font-size:12.5px;color:#8e877a;text-align:center;margin-top:14px;line-height:1.5}
+.form-msg{display:none;font-size:14px;color:#ffb4a2;text-align:center;margin-top:10px}
+
+/* CHECKS */
+.checks{display:grid;gap:14px}
+.checks img{width:100%;max-width:560px;border-radius:14px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.6))}
+.checks.center-col img{margin:0 auto}
+
+/* SECTION TITLES */
+.sec-title{font-size:clamp(28px,4.4vw,46px);text-align:center;max-width:860px;margin:0 auto}
+.sec-title em{display:block}
+.sec-sub{font-size:clamp(17px,2vw,20px);color:var(--muted);text-align:center;max-width:720px;margin:20px auto 0}
+
+/* TIMELINE */
+.timeline{position:relative;max-width:980px;margin:64px auto 0}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--gold) 8%,var(--gold) 92%,transparent);opacity:.5}
+.tl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:64px}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(227,184,102,.18),0 0 24px var(--gold)}
+.tl-item:nth-child(even) .tl-img{order:2}
+.tl-img img{border-radius:var(--radius);box-shadow:0 20px 60px -18px rgba(227,184,102,.35)}
+.tl-text .yr{font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+.tl-text h3{font-size:clamp(22px,2.6vw,30px);margin-top:8px}
+.tl-item.now .tl-text h3{font-size:clamp(26px,3.2vw,38px)}
+
+/* INSIGHT */
+.insight{font-size:clamp(18px,2.1vw,21px);line-height:1.7}
+.insight p+p{margin-top:18px}
+.quote-box{margin:34px 0;padding:28px 30px;border-left:3px solid var(--gold);background:linear-gradient(90deg,rgba(227,184,102,.09),transparent);border-radius:0 14px 14px 0;font-family:"Playfair Display",serif;font-size:clamp(21px,2.6vw,27px);line-height:1.4;color:#fff}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.gallery figure{border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px rgba(227,184,102,.18);transition:transform .3s,box-shadow .3s}
+.gallery figure:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(227,184,102,.55),0 18px 40px -14px rgba(227,184,102,.35)}
+
+/* NEXT / FORNO */
+.forno{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.forno .poster img{border-radius:22px;box-shadow:0 0 0 1px rgba(227,184,102,.35),0 30px 80px -20px rgba(227,184,102,.35)}
+.forno h2{font-size:clamp(28px,3.8vw,42px)}
+.forno p{color:var(--muted);font-size:18px;margin-top:18px}
+
+/* BONUS */
+.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.bonus{padding:34px 26px;border-radius:var(--radius);text-align:center;background:linear-gradient(170deg,#132b1d,#0a0f0c);box-shadow:0 0 0 1px rgba(227,184,102,.25)}
+.bonus .ico{font-size:40px;line-height:1;margin-bottom:16px}
+.bonus h3{font-size:21px}
+.bonus p{color:var(--muted);font-size:15px;margin-top:10px}
+
+/* GROUP CTA */
+.group-cta{text-align:center;padding:56px 32px;border-radius:28px;background:radial-gradient(ellipse at top,rgba(227,184,102,.16),transparent 65%),#0b0b0a;box-shadow:0 0 0 1px rgba(227,184,102,.35)}
+.group-cta p{font-size:clamp(19px,2.3vw,24px);max-width:720px;margin:0 auto 30px;line-height:1.5}
+
+/* PROFESSOR */
+.prof{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.prof .photo img{border-radius:50%;aspect-ratio:1;object-fit:cover;box-shadow:0 0 0 2px rgba(227,184,102,.45),0 0 80px -10px rgba(227,184,102,.35)}
+.prof h2{font-size:clamp(32px,4.6vw,52px);margin:6px 0 22px}
+.prof p{color:#d8d0c2;font-size:17.5px}
+.prof p+p{margin-top:16px}
+.stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:28px}
+.stat b{display:block;font-family:"Playfair Display",serif;font-size:34px;line-height:1}
+.stat span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+
+/* FINAL */
+.final{text-align:center}
+.final .logo{width:min(380px,80%);margin:0 auto 26px}
+
+footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;border-top:1px solid rgba(227,184,102,.12)}
+
+/* STICKY MOBILE CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent,rgba(5,5,5,.96) 35%);display:none}
+.sticky .btn{min-height:56px;width:100%;font-size:15px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn.pulse{animation:none}}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero-grid,.forno,.prof{grid-template-columns:1fr;gap:36px}
+  .hero-grid{text-align:center}
+  .checks img{margin:0 auto}
+  .gallery{grid-template-columns:repeat(2,1fr);gap:12px}
+  .bonus-grid{grid-template-columns:1fr}
+  .timeline::before{left:10px}
+  .tl-item{grid-template-columns:1fr;gap:18px;padding-left:36px;margin-bottom:48px}
+  .tl-item::after{left:10px;top:12px}
+  .tl-item:nth-child(even) .tl-img{order:0}
+  .tl-text{order:-1}
+  .prof .photo{max-width:340px;margin:0 auto}
+  .prof{text-align:center}
+  .stats{justify-content:center}
+  .forno .poster{max-width:420px;margin:0 auto}
+  .forno{text-align:center}
+  .sticky.show{display:block}
+}
+@media (max-width:480px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .card-form{padding:28px 20px}
+  .group-cta{padding:40px 20px}
+  .btn{padding:16px 22px;font-size:14.5px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero glow-green">
+  <div class="wrap">
+    <img class="logo" src="img/logo-black-infinita.webp" alt="Black Infinita Túlio Cotta" width="1100" height="550" fetchpriority="high">
+    <h1>Todas as minhas formações atuais. Todas as que eu ainda vou lançar. <em class="gold">Com acesso pra sempre e um desconto histórico.</em></h1>
+    <p class="sub">Tudo para você se tornar a profissional da beleza mais reconhecida e bem paga da sua cidade, e estar um passo à frente das demais, <strong class="caps">pra sempre!</strong></p>
+
+    <div class="hero-grid">
+      <div class="checks">
+        <img src="img/check-reconstrucao.webp" alt="Reconstrução 360º Brows" width="899" height="219">
+        <img src="img/check-formacoes.webp" alt="Fio-a-fio, despigmentação, micro labial, design e posicionamento" width="899" height="254">
+        <img src="img/check-futuras.webp" alt="Todas as formações online que eu lançar daqui pra frente" width="899" height="286">
+        <img src="img/check-kit.webp" alt="Kit 360º de presente na sua casa" width="899" height="254">
+        <img src="img/check-fracao.webp" alt="Por uma fração do que custaria comprar cada formação separada" width="899" height="254">
+      </div>
+
+      <div id="cadastro" class="card-form">
+        <div class="center" style="margin-bottom:18px"><span class="date-pill">📌 <span>Abertura Oficial: <b>04 de Novembro, Ao Vivo às 20h</b></span></span></div>
+        <h3 class="gold">Cadastre-se e participe da Live de Lançamento</h3>
+        <p class="lead">para garantir benefícios extras</p>
+        <form id="leadForm" novalidate>
+          <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Como você se chama?" required></div>
+          <div class="field"><label for="f-email">Seu melhor e-mail</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" required></div>
+          <div class="field"><label for="f-tel">WhatsApp com DDD</label><input id="f-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(31) 99999-9999" required></div>
+          <button class="btn block pulse" type="submit" id="f-btn">Quero participar</button>
+          <div class="form-msg" id="f-msg"></div>
+          <p class="form-note">🔒 Seus dados estão seguros. Depois do cadastro você entra no grupo, onde eu vou mandar o link da live.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ UM PASSO À FRENTE ============ -->
+<section class="glow-gold">
+  <div class="wrap">
+    <p class="eyebrow center reveal">Minha história é feita de viradas</p>
+    <h2 class="sec-title reveal" style="margin-top:14px">Eu sempre cheguei um passo à frente. <em class="gold">E agora, vou trazer você comigo.</em></h2>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-img"><img src="img/be-brows.webp" alt="Be Brows, Técnica Fio a Fio" width="1100" height="612" loading="lazy"></div>
+        <div class="tl-text"><span class="yr">2016 · Fio a fio</span><h3>Eu cheguei antes no fio a fio, criando a técnica <span class="gold">Be Brows</span>.</h3></div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-img"><img src="img/chiaro.webp" alt="Método Chiaro, Despigmentação" width="1100" height="619" loading="lazy"></div>
+        <div class="tl-text"><span class="yr">Despigmentação</span><h3>Cheguei antes na despigmentação, quando as clientes começaram a se arrepender da micro malfeita, e criei o <span class="gold">Método Chiaro</span>.</h3></div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-img"><img src="img/be-lips.webp" alt="Be Lips, A Micro Labial" width="1100" height="612" loading="lazy"></div>
+        <div class="tl-text"><span class="yr">Micro labial</span><h3>Cheguei antes na micro labial, com a <span class="gold">Be Lips</span>.</h3></div>
+      </div>
+      <div class="tl-item now reveal">
+        <div class="tl-img"><img src="img/protocolo-360.webp" alt="Protocolo 360º Brows" width="1100" height="612" loading="lazy"></div>
+        <div class="tl-text"><span class="yr">Agora</span><h3>E agora, na <span class="gold">Reconstrução 360º Brows</span>.</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ A VIRADA ============ -->
+<section class="band-green">
+  <div class="wrap narrow insight reveal">
+    <h2 class="sec-title" style="text-align:left;margin:0">Em cada uma dessas viradas, <em class="gold">eu vi a mesma coisa:</em></h2>
+    <div class="quote-box">Quem aprende uma técnica antes de todo mundo, se torna uma das poucas profissionais da região capaz de entregar o resultado que as clientes querem.</div>
+    <p>E aí é agenda cheia, cobrando o <strong>SEU</strong> preço.</p>
+    <p>Só que, até hoje, você precisava descobrir a tendência, esperar o curso abrir e pagar de novo a cada técnica nova.</p>
+    <p>Mas no dia <strong>04 de novembro, às 20h,</strong> eu vou abrir Ao Vivo a <strong class="gold">Black Friday Infinita</strong>, com uma oferta que eu nunca fiz, com <strong>acesso vitalício</strong> à:</p>
+  </div>
+  <div class="wrap" style="margin-top:40px">
+    <div class="checks center-col reveal">
+      <img src="img/check-reconstrucao.webp" alt="Reconstrução 360º Brows" width="899" height="219" loading="lazy">
+      <img src="img/check-formacoes.webp" alt="Fio-a-fio, despigmentação, micro labial, design e posicionamento" width="899" height="254" loading="lazy">
+      <img src="img/check-futuras.webp" alt="Todas as formações online que eu lançar daqui pra frente" width="899" height="286" loading="lazy">
+    </div>
+
+    <div class="gallery reveal">
+      <figure><img src="img/protocolo-360.webp" alt="Protocolo 360º Brows" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="img/be-brows.webp" alt="Be Brows, Técnica Fio a Fio" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="img/chiaro.webp" alt="Método Chiaro, Despigmentação" width="1100" height="619" loading="lazy"></figure>
+      <figure><img src="img/be-lips.webp" alt="Be Lips, A Micro Labial" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="img/design-perfeito.webp" alt="Design Perfeito" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="img/colorimetria.webp" alt="Colorimetria Avançada" width="1100" height="619" loading="lazy"></figure>
+      <figure><img src="img/posicionamento.webp" alt="O Poder do Posicionamento" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="img/maquina-de-vendas.webp" alt="Máquina de Vendas" width="1100" height="612" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NO FORNO ============ -->
+<section class="glow-gold">
+  <div class="wrap forno">
+    <div class="poster reveal"><img src="img/brow-lamination.webp" alt="Em breve: Brow Lamination com Nutrição Folicular" width="900" height="1112" loading="lazy"></div>
+    <div class="reveal">
+      <p class="eyebrow">Em breve</p>
+      <h2 style="margin-top:12px">Todas as formações online que eu lançar daqui pra frente. <em class="gold">A próxima já está no forno:</em></h2>
+      <p><strong>Brow Lamination com Nutrição Folicular.</strong> Quando ela chegar, você já vai estar dentro, sem pagar de novo.</p>
+      <div style="margin-top:30px"><a href="#cadastro" class="btn">Quero aprender com você pra sempre</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BÔNUS AO VIVO ============ -->
+<section class="glow-green">
+  <div class="wrap">
+    <div class="center reveal"><span class="date-pill">📌 <span>Abertura Oficial: <b>04 de Novembro, Ao Vivo às 20h</b></span></span></div>
+    <h2 class="sec-title reveal" style="margin-top:24px">Bônus incríveis para quem estiver <em class="gold">Ao Vivo:</em></h2>
+    <div class="bonus-grid">
+      <div class="bonus reveal"><div class="ico">🎁</div><h3 class="gold">Kit presente</h3><p>O Kit 360º chegando de presente na sua casa.</p></div>
+      <div class="bonus reveal"><div class="ico">🏷️</div><h3 class="gold">Desconto de aluna</h3><p>Desconto nos meus produtos, pra sempre.</p></div>
+      <div class="bonus reveal"><div class="ico">🤝</div><h3 class="gold">Suporte e certificado</h3><p>Meu suporte e o da minha equipe, lives comigo e certificado assinado por mim.</p></div>
+    </div>
+
+    <div class="group-cta reveal" style="margin-top:56px">
+      <p>Se você quer estar um passo à frente, pra sempre, entre no grupo. <strong class="gold">Lá, e somente lá,</strong> eu vou mandar o link da live e todos os detalhes da oferta.</p>
+      <a href="#" class="btn pulse js-group" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>
+        Entrar no grupo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFESSOR ============ -->
+<section class="band-green">
+  <div class="wrap prof">
+    <div class="photo reveal"><img src="img/tulio-cotta.webp" alt="Túlio Cotta realizando procedimento" width="1000" height="1000" loading="lazy"></div>
+    <div class="reveal">
+      <p class="eyebrow">Conheça seu professor</p>
+      <h2 class="gold">Túlio Cotta</h2>
+      <p>Eu comecei do zero. Entregava marmitas e não sabia nem segurar uma pinça. Em 2015, virei micropigmentador em Belo Horizonte e cheguei a fazer 13 procedimentos por dia.</p>
+      <p>Em 2016, criei a técnica de fios Be Brows e abri meu primeiro studio. Depois vieram o Método Chiaro de despigmentação, a micro labial Be Lips e a Reconstrução 360º Brows, com <strong>produtos próprios registrados na Anvisa e na União Europeia.</strong></p>
+      <p>Hoje, a minha escola tem sede em Belo Horizonte e em Lisboa, e já formou <strong>MAIS DE 10 MIL profissionais no Brasil e no exterior.</strong> E toda vez que o mercado da beleza mudou, eu estava lá antes.</p>
+      <p><strong>Agora, eu quero você comigo. <span class="gold">PRA SEMPRE!</span></strong></p>
+      <div class="stats">
+        <div class="stat"><b class="gold">+10 mil</b><span>profissionais formadas</span></div>
+        <div class="stat"><b class="gold">BH · Lisboa</b><span>sedes da escola</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="glow-gold final">
+  <div class="wrap narrow reveal">
+    <img class="logo" src="img/logo-black-infinita.webp" alt="Black Infinita" width="1100" height="550" loading="lazy">
+    <h2 class="sec-title">Você um passo à frente. <em class="gold">Pra sempre.</em></h2>
+    <p class="sec-sub">📌 Abertura Oficial: <strong>04 de Novembro, Ao Vivo às 20h</strong></p>
+    <div style="margin-top:34px"><a href="#cadastro" class="btn pulse">Quero aprender com você pra sempre</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Túlio Cotta. Todos os direitos reservados.</div>
+</footer>
+
+<div class="sticky" id="sticky"><a href="#cadastro" class="btn">Quero participar</a></div>
+
+<script>
+/* ===================== CONFIGURAÇÃO =====================
+   GROUP_URL:   link do grupo (WhatsApp/Telegram) para onde a pessoa vai depois do cadastro
+   WEBHOOK_URL: endpoint que recebe os leads (ActiveCampaign, RD, n8n, Make, Zapier...).
+                Deixe vazio para só redirecionar ao grupo.                          */
+var CONFIG = {
+  GROUP_URL:   "#GRUPO",
+  WEBHOOK_URL: ""
+};
+/* ======================================================== */
+
+(function(){
+  // links do grupo
+  document.querySelectorAll('.js-group').forEach(function(a){ a.href = CONFIG.GROUP_URL; });
+
+  // UTMs
+  var params = new URLSearchParams(location.search);
+  var utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){ if(params.get(k)) utm[k]=params.get(k); });
+
+  // máscara de telefone (BR)
+  var tel = document.getElementById('f-tel');
+  tel.addEventListener('input', function(){
+    var v = tel.value.replace(/\D/g,'').slice(0,11);
+    if(v.length>10) tel.value='('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
+    else if(v.length>6) tel.value='('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);
+    else if(v.length>2) tel.value='('+v.slice(0,2)+') '+v.slice(2);
+    else tel.value=v;
+  });
+
+  var form = document.getElementById('leadForm'), btn = document.getElementById('f-btn'), msg = document.getElementById('f-msg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = form.nome.value.trim(), email = form.email.value.trim(), fone = form.telefone.value.replace(/\D/g,'');
+    var err = '';
+    if(nome.length<2) err='Digite seu nome.';
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) err='Digite um e-mail válido.';
+    else if(fone.length<10) err='Digite seu WhatsApp com DDD.';
+    if(err){ msg.textContent=err; msg.style.display='block'; return; }
+    msg.style.display='none';
+    btn.disabled=true; btn.textContent='Enviando...';
+
+    var lead = Object.assign({nome:nome,email:email,telefone:fone,pagina:location.href}, utm);
+    try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
+    try{ (window.dataLayer=window.dataLayer||[]).push({event:'lead_black_infinita'}); }catch(_){}
+
+    var go = function(){ location.href = CONFIG.GROUP_URL; };
+    if(!CONFIG.WEBHOOK_URL){ go(); return; }
+    var done=false, finish=function(){ if(!done){ done=true; go(); } };
+    fetch(CONFIG.WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead),keepalive:true}).then(finish,finish);
+    setTimeout(finish, 2500);
+  });
+
+  // reveal on scroll
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }); },{threshold:.12});
+    els.forEach(function(el){ io.observe(el); });
+  } else els.forEach(function(el){ el.classList.add('in'); });
+
+  // sticky CTA no mobile (aparece depois do hero, some perto do formulário)
+  var sticky = document.getElementById('sticky'), card = document.getElementById('cadastro');
+  window.addEventListener('scroll', function(){
+    var r = card.getBoundingClientRect();
+    sticky.classList.toggle('show', window.scrollY > 600 && (r.bottom < 0 || r.top > window.innerHeight));
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
