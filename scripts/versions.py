@@ -13,7 +13,7 @@ VERSIONS = {
         "sub": "",  # sem subtítulo
     },
     "v3": {
-        "h1": 'PROFISSIONAL DA BELEZA: VOCÊ NUNCA MAIS VAI PRECISAR PAGAR PRA APRENDER UMA <span class="gold">NOVA TÉCNICA</span> COMIGO',
+        "h1": 'PROFISSIONAL DA BELEZA: VOCÊ <span class="gold">NUNCA MAIS</span> VAI PRECISAR PAGAR PRA APRENDER UMA NOVA TÉCNICA COMIGO',
         "sub": 'Na BlackFriday Infinita, você leva todas as formações atuais e às futuras, com acesso vitalício. Inclusive a <strong>Reconstrução 360º Brows</strong>. E por uma fração do que elas custariam separadas.',
     },
     "v4": {
