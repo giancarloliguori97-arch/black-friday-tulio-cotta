@@ -10,7 +10,7 @@ SRC = (ROOT / "index.html").read_text(encoding="utf-8")
 VERSIONS = {
     "v2": {
         "h1": 'Seja a profissional mais completa e procurada da sua região, garantindo acesso vitalício à TODAS as formações online de Túlio Cotta <em class="gold">— as que existem e as próximas tendências que estão chegando</em>',
-        "sub": None,  # mantém o subtítulo da v1
+        "sub": "",  # sem subtítulo
     },
     "v3": {
         "h1": 'PROFISSIONAL DA BELEZA: <em class="gold">VOCÊ NUNCA MAIS VAI PRECISAR PAGAR PRA APRENDER UMA NOVA TÉCNICA COMIGO</em>',
@@ -26,7 +26,10 @@ for name, v in VERSIONS.items():
     html = SRC
     html, n = re.subn(r"<h1>.*?</h1>", f'<h1 class="h1-{name}">{v["h1"]}</h1>', html, count=1, flags=re.S)
     assert n == 1
-    if v["sub"]:
+    if v["sub"] == "":
+        html, n = re.subn(r'\s*<p class="sub">.*?</p>', '', html, count=1, flags=re.S)
+        assert n == 1
+    elif v["sub"]:
         html, n = re.subn(r'<p class="sub">.*?</p>', f'<p class="sub">{v["sub"]}</p>', html, count=1, flags=re.S)
         assert n == 1
     (ROOT / f"{name}.html").write_text(html, encoding="utf-8")
