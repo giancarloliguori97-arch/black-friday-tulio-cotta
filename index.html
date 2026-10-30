@@ -206,6 +206,10 @@ footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;borde
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn.pulse{animation:none}}
 
+/* headlines mais longas das versões v2/v3 no desktop */
+@media (min-width:901px){.hero h1.h1-v2,.hero h1.h1-v3{font-size:clamp(24px,2.35vw,32px);max-width:1040px}}
+.hero h1.h1-v3{letter-spacing:.01em}
+
 /* RESPONSIVE */
 @media (max-width:900px){
   section{padding:64px 0}

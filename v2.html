@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Infinita | Túlio Cotta</title>
+<meta name="description" content="Todas as formações atuais e futuras do Túlio Cotta, com acesso pra sempre. Abertura oficial ao vivo em 04 de novembro, às 20h.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Black Infinita | Túlio Cotta">
+<meta property="og:description" content="Você um passo à frente. Pra sempre. Live de abertura: 04/11, 20h.">
+<meta property="og:image" content="https://black-friday-tulio-cotta.vercel.app/img/logo-black-infinita.webp">
+<meta name="theme-color" content="#050505">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/img/logo-black-infinita.webp">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2102142283255426');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2102142283255426&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+
+<style>
+:root{
+  --bg:#050505; --bg2:#0b0b0a; --green:#0e2318; --green2:#16321f;
+  --gold:#e3b866; --gold-light:#f6dfa4; --gold-dark:#a8772c;
+  --text:#f1ece2; --muted:#b9b0a0;
+  --grad: linear-gradient(100deg,#a8772c 0%,#f6dfa4 35%,#e3b866 55%,#fff1c8 72%,#b9852f 100%);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Montserrat,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:780px}
+section{position:relative;padding:88px 0}
+h1,h2,h3{text-wrap:balance;font-family:"Playfair Display",Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+.gold{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+em{font-style:italic}
+strong{font-weight:700;color:#fff}
+.caps{text-transform:uppercase;letter-spacing:.04em}
+.center{text-align:center}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.divider{height:1px;width:140px;margin:22px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* glow backgrounds */
+.glow-green{background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(30,74,46,.55),transparent 70%),var(--bg)}
+.glow-gold{background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(227,184,102,.12),transparent 70%),var(--bg2)}
+.band-green{background:linear-gradient(180deg,var(--green) 0%,#07140d 100%)}
+
+/* buttons */
+button.btn{font-family:Montserrat,sans-serif}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:62px;padding:18px 34px;border:0;border-radius:999px;cursor:pointer;
+  font:800 16px/1.2 Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;text-align:center;color:#fff;text-shadow:0 1px 2px rgba(120,40,0,.35);
+  background:linear-gradient(100deg,#FF6A13 0%,#FF8F2E 50%,#FF6A13 100%);background-size:200% 100%;box-shadow:0 0 0 1px rgba(255,190,140,.45) inset,0 10px 40px -8px rgba(255,106,19,.6);
+  transition:background-position .5s,transform .2s,box-shadow .2s}
+.btn:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,200,150,.6) inset,0 16px 50px -8px rgba(255,106,19,.8)}
+.btn.block{width:100%}
+.btn.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 1px rgba(255,190,140,.45) inset,0 0 0 0 rgba(255,106,19,.55)}50%{box-shadow:0 0 0 1px rgba(255,190,140,.45) inset,0 0 0 14px rgba(255,106,19,0)}}
+.btn svg{width:22px;height:22px;flex:none}
+
+/* HERO */
+.hero{padding:22px 0 72px;text-align:center}
+.hero .logo{width:min(250px,60%);margin:0 auto 10px;filter:drop-shadow(0 10px 40px rgba(227,184,102,.25))}
+.hero h1{font-size:clamp(26px,2.9vw,38px);max-width:980px;margin:0 auto}
+.hero h1 em{display:block}
+.hero .sub{font-size:clamp(15px,1.4vw,18px);color:var(--muted);max-width:780px;margin:12px auto 0}
+.hero-stack{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:22px}
+.hero-checks{order:1}
+.hero-cta{order:2;display:flex;flex-direction:column;align-items:center;gap:6px}
+.date-line{font-size:clamp(16px,1.7vw,20px);font-weight:600}
+.date-line b{color:var(--gold-light)}
+.cad-line{font-size:clamp(14px,1.4vw,17px);color:var(--muted);max-width:520px}
+.hero-cta .btn{margin-top:8px;min-width:min(420px,100%);min-height:58px}
+.date-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border:1px solid rgba(227,184,102,.45);border-radius:999px;background:rgba(227,184,102,.07);font-weight:600;font-size:15px}
+.date-pill b{color:var(--gold-light)}
+
+/* POP-UP */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.open{display:flex;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.card-form{position:relative;width:100%;max-width:460px;max-height:calc(100vh - 32px);overflow:auto;padding:38px 30px 30px;border-radius:24px;background:linear-gradient(160deg,#122a1c 0%,#0a120d 60%,#0a0a09 100%);
+  box-shadow:0 0 0 1px rgba(227,184,102,.45),0 30px 80px -20px rgba(0,0,0,.9);animation:popIn .3s ease}
+.modal-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.modal-close:hover{background:rgba(255,255,255,.16)}
+.card-form h3{font-size:24px;text-align:center;margin:6px 0 6px;padding:0 26px}
+.card-form p.lead{text-align:center;color:var(--muted);font-size:15px;margin-bottom:22px}
+.card-form p.lead b{color:var(--gold-light)}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--gold-light);margin-bottom:6px;letter-spacing:.03em}
+.field input{width:100%;height:54px;padding:0 18px;border-radius:12px;border:1px solid rgba(227,184,102,.28);background:rgba(0,0,0,.45);color:#fff;font:500 16px Montserrat,sans-serif;outline:none;transition:border .2s,box-shadow .2s}
+.field input::placeholder{color:#7d766a}
+.field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,184,102,.2)}
+.phone{position:relative;display:flex;gap:8px}
+.phone input{flex:1;min-width:0}
+.ddi-btn{flex:none;display:flex;align-items:center;gap:7px;height:54px;padding:0 12px;border-radius:12px;border:1px solid rgba(227,184,102,.28);background:rgba(0,0,0,.45);color:#fff;font:600 15px Montserrat,sans-serif;cursor:pointer}
+.ddi-btn:focus-visible,.ddi-btn[aria-expanded="true"]{border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,184,102,.2);outline:none}
+.flag{display:inline-flex;width:24px;height:17px;flex:none}
+.flag svg{width:100%;height:100%;border-radius:2px}
+.caret{font-size:11px;color:var(--gold-light)}
+.ddi-menu{display:none;position:absolute;top:60px;left:0;z-index:5;min-width:210px;list-style:none;padding:6px;border-radius:12px;background:#0d1a12;box-shadow:0 0 0 1px rgba(227,184,102,.4),0 18px 40px -10px rgba(0,0,0,.9)}
+.ddi-menu.open{display:block}
+.ddi-menu li{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:8px;cursor:pointer;font-size:15px}
+.ddi-menu li b{margin-left:auto;color:var(--gold-light)}
+.ddi-menu li:hover,.ddi-menu li[aria-selected="true"]{background:rgba(227,184,102,.12)}
+.form-note{font-size:12.5px;color:#8e877a;text-align:center;margin-top:14px;line-height:1.5}
+.form-msg{display:none;font-size:14px;color:#ffb4a2;text-align:center;margin-top:10px}
+body.lock{overflow:hidden}
+
+/* CHECKS */
+.checks{display:grid;gap:14px}
+.checks img{width:100%;max-width:560px;border-radius:14px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.6))}
+.checks.center-col img{margin:0 auto}
+.hero-checks{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 12px;max-width:900px}
+.hero-checks img{width:270px;max-width:100%;border-radius:12px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+
+/* SECTION TITLES */
+.sec-title{font-size:clamp(28px,4.4vw,46px);text-align:center;max-width:860px;margin:0 auto}
+.sec-title em{display:block}
+.sec-sub{font-size:clamp(17px,2vw,20px);color:var(--muted);text-align:center;max-width:720px;margin:20px auto 0}
+
+/* TIMELINE */
+.timeline{position:relative;max-width:980px;margin:64px auto 0}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--gold) 8%,var(--gold) 92%,transparent);opacity:.5}
+.tl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:64px}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(227,184,102,.18),0 0 24px var(--gold)}
+.tl-item:nth-child(even) .tl-img{order:2}
+.tl-img img{border-radius:var(--radius);box-shadow:0 20px 60px -18px rgba(227,184,102,.35)}
+.tl-text .yr{font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+.tl-text h3{font-size:clamp(22px,2.6vw,30px);margin-top:8px}
+.tl-item.now .tl-text h3{font-size:clamp(26px,3.2vw,38px)}
+
+/* INSIGHT */
+.insight{font-size:clamp(18px,2.1vw,21px);line-height:1.7}
+.insight p+p{margin-top:18px}
+.quote-box{margin:34px 0;padding:28px 30px;border-left:3px solid var(--gold);background:linear-gradient(90deg,rgba(227,184,102,.09),transparent);border-radius:0 14px 14px 0;font-family:"Playfair Display",serif;font-size:clamp(21px,2.6vw,27px);line-height:1.4;color:#fff}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.gallery figure{border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px rgba(227,184,102,.18);transition:transform .3s,box-shadow .3s}
+.gallery figure:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(227,184,102,.55),0 18px 40px -14px rgba(227,184,102,.35)}
+
+/* NEXT / FORNO */
+.forno{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.forno .poster img{border-radius:22px;box-shadow:0 0 0 1px rgba(227,184,102,.35),0 30px 80px -20px rgba(227,184,102,.35)}
+.forno h2{font-size:clamp(28px,3.8vw,42px)}
+.forno p{color:var(--muted);font-size:18px;margin-top:18px}
+
+/* BONUS */
+.bonus-sec{position:relative;overflow:hidden;padding:100px 0;background:
+  radial-gradient(ellipse 55% 45% at 50% 0%,rgba(227,184,102,.28),transparent 70%),
+  radial-gradient(ellipse 40% 40% at 0% 100%,rgba(30,74,46,.6),transparent 70%),
+  radial-gradient(ellipse 40% 40% at 100% 100%,rgba(30,74,46,.6),transparent 70%),#070806}
+.bonus-sec::before,.bonus-sec::after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--grad)}
+.bonus-sec::before{top:0}.bonus-sec::after{bottom:0}
+.bonus-badge{display:inline-block;padding:9px 20px;border-radius:999px;background:var(--grad);color:#1a1206;font-weight:800;font-size:13px;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 10px 30px -8px rgba(227,184,102,.6)}
+.bonus-title{font-size:clamp(38px,6.6vw,76px);line-height:1.05;margin:22px auto 0;max-width:1000px;text-align:center;text-wrap:balance}
+.bonus-title em{display:block;font-size:1.08em;filter:drop-shadow(0 0 30px rgba(227,184,102,.45))}
+.bonus-intro{text-align:center;color:var(--muted);font-size:clamp(16px,1.8vw,19px);max-width:640px;margin:20px auto 0}
+.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
+.bonus{position:relative;padding:44px 28px 34px;border-radius:22px;text-align:center;background:linear-gradient(170deg,#173521,#0a0f0c);box-shadow:0 0 0 1px rgba(227,184,102,.45),0 24px 60px -24px rgba(227,184,102,.45);transition:transform .3s}
+.bonus:hover{transform:translateY(-6px)}
+.bonus .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:6px 16px;border-radius:999px;background:var(--grad);color:#1a1206;font-weight:800;font-size:12px;letter-spacing:.16em;white-space:nowrap}
+.bonus .ico{font-size:52px;line-height:1;margin-bottom:18px}
+.bonus h3{font-size:25px}
+.bonus p{color:#d8d0c2;font-size:16px;margin-top:12px}
+
+/* GROUP CTA */
+.group-cta{text-align:center;padding:56px 32px;border-radius:28px;background:radial-gradient(ellipse at top,rgba(227,184,102,.16),transparent 65%),#0b0b0a;box-shadow:0 0 0 1px rgba(227,184,102,.35)}
+.group-cta p{font-size:clamp(19px,2.3vw,24px);max-width:720px;margin:0 auto 30px;line-height:1.5}
+
+/* PROFESSOR */
+.prof{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.prof .photo img{border-radius:50%;aspect-ratio:1;object-fit:cover;box-shadow:0 0 0 2px rgba(227,184,102,.45),0 0 80px -10px rgba(227,184,102,.35)}
+.prof h2{font-size:clamp(32px,4.6vw,52px);margin:6px 0 22px}
+.prof p{color:#d8d0c2;font-size:17.5px}
+.prof p+p{margin-top:16px}
+.stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:28px}
+.stat b{display:block;font-family:"Playfair Display",serif;font-size:34px;line-height:1}
+.stat span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+
+/* FINAL */
+.final{text-align:center}
+.final .logo{width:min(380px,80%);margin:0 auto 26px}
+
+footer{padding:34px 0 110px;text-align:center;font-size:13px;color:#6f695f;border-top:1px solid rgba(227,184,102,.12)}
+
+/* STICKY MOBILE CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent,rgba(5,5,5,.96) 35%);display:none}
+.sticky .btn{min-height:56px;width:100%;font-size:15px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn.pulse{animation:none}}
+
+/* headlines mais longas das versões v2/v3 no desktop */
+@media (min-width:901px){.hero h1.h1-v2,.hero h1.h1-v3{font-size:clamp(24px,2.35vw,32px);max-width:1040px}}
+.hero h1.h1-v3{letter-spacing:.01em}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  section{padding:64px 0}
+  .forno,.prof{grid-template-columns:1fr;gap:36px}
+  .gallery{grid-template-columns:repeat(2,1fr);gap:12px}
+  .bonus-grid{grid-template-columns:1fr;gap:30px}
+  .bonus-sec{padding:72px 0}
+  .timeline::before{left:10px}
+  .tl-item{grid-template-columns:1fr;gap:18px;padding-left:36px;margin-bottom:48px}
+  .tl-item::after{left:10px;top:12px}
+  .tl-item:nth-child(even) .tl-img{order:0}
+  .tl-text{order:-1}
+  .prof .photo{max-width:340px;margin:0 auto}
+  .prof{text-align:center}
+  .stats{justify-content:center}
+  .forno .poster{max-width:420px;margin:0 auto}
+  .forno{text-align:center}
+  .sticky.show{display:block}
+  /* primeira dobra no celular: data + botão antes dos banners */
+  .hero{padding:18px 0 56px}
+  .hero .logo{width:min(230px,62%);margin-bottom:8px}
+  .hero-stack{gap:24px;margin-top:20px}
+  .hero-cta{order:1;width:100%}
+  .hero-checks{order:2;flex-direction:column;align-items:center;gap:10px}
+  .hero-checks img{width:300px}
+  .hero-cta .btn{width:100%;min-width:0}
+}
+@media (max-width:480px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .card-form{padding:36px 20px 24px}
+  .group-cta{padding:40px 20px}
+  .btn{padding:16px 22px;font-size:14.5px}
+  .hero h1{font-size:24px}
+  .hero .sub{font-size:15px;margin-top:12px}
+  .hero-checks img{width:84%}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero glow-green">
+  <div class="wrap">
+    <img class="logo" src="/img/logo-black-infinita.webp" alt="Black Infinita Túlio Cotta" width="1100" height="550" fetchpriority="high">
+    <h1 class="h1-v2">Seja a profissional mais completa e procurada da sua região, garantindo acesso vitalício à TODAS as formações online de Túlio Cotta <em class="gold">— as que existem e as próximas tendências que estão chegando</em></h1>
+    <p class="sub">Tudo para você se tornar a profissional da beleza mais reconhecida e bem paga da sua cidade, e estar um passo à frente das demais, <strong class="caps">pra sempre!</strong></p>
+
+    <div class="hero-stack">
+      <div class="hero-cta">
+        <p class="date-line">📌 <b>Abertura Oficial:</b> 04 de Novembro, Ao Vivo às 20h</p>
+        <p class="cad-line">Cadastre-se e participe da Live de Lançamento para benefícios extras:</p>
+        <button type="button" class="btn pulse js-open">Quero participar</button>
+      </div>
+      <div class="hero-checks">
+        <img src="/img/check-reconstrucao.webp" alt="Reconstrução 360º Brows" width="899" height="219">
+        <img src="/img/check-formacoes.webp" alt="Fio-a-fio, despigmentação, micro labial, design e posicionamento" width="899" height="254">
+        <img src="/img/check-futuras.webp" alt="Todas as formações online que eu lançar daqui pra frente" width="899" height="286">
+        <img src="/img/check-kit.webp" alt="Kit 360º de presente na sua casa" width="899" height="254">
+        <img src="/img/check-fracao.webp" alt="Por uma fração do que custaria comprar cada formação separada" width="899" height="254">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ UM PASSO À FRENTE ============ -->
+<section class="glow-gold">
+  <div class="wrap">
+    <p class="eyebrow center reveal">Minha história é feita de viradas</p>
+    <h2 class="sec-title reveal" style="margin-top:14px">Eu sempre cheguei um passo à frente. <em class="gold">E agora, vou trazer você comigo.</em></h2>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-img"><img src="/img/be-brows.webp" alt="Be Brows, Técnica Fio a Fio" width="1100" height="612" loading="lazy"></div>
+        <div class="tl-text"><span class="yr">2016 · Fio a fio</span><h3>Eu cheguei antes no fio a fio, criando a técnica <span class="gold">Be Brows</span>.</h3></div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-img"><img src="/img/chiaro.webp" alt="Método Chiaro, Despigmentação" width="1100" height="619" loading="lazy"></div>
+        <div class="tl-text"><span class="yr">Despigmentação</span><h3>Cheguei antes na despigmentação, quando as clientes começaram a se arrepender da micro malfeita, e criei o <span class="gold">Método Chiaro</span>.</h3></div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-img"><img src="/img/be-lips.webp" alt="Be Lips, A Micro Labial" width="1100" height="612" loading="lazy"></div>
+        <div class="tl-text"><span class="yr">Micro labial</span><h3>Cheguei antes na micro labial, com a <span class="gold">Be Lips</span>.</h3></div>
+      </div>
+      <div class="tl-item now reveal">
+        <div class="tl-img"><img src="/img/protocolo-360.webp" alt="Protocolo 360º Brows" width="1100" height="612" loading="lazy"></div>
+        <div class="tl-text"><span class="yr">Agora</span><h3>E agora, na <span class="gold">Reconstrução 360º Brows</span>.</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ A VIRADA ============ -->
+<section class="band-green">
+  <div class="wrap narrow insight reveal">
+    <h2 class="sec-title" style="text-align:left;margin:0">Em cada uma dessas viradas, <em class="gold">eu vi a mesma coisa:</em></h2>
+    <div class="quote-box">Quem aprende uma técnica antes de todo mundo, se torna uma das poucas profissionais da região capaz de entregar o resultado que as clientes querem.</div>
+    <p>E aí é agenda cheia, cobrando o <strong>SEU</strong> preço.</p>
+    <p>Só que, até hoje, você precisava descobrir a tendência, esperar o curso abrir e pagar de novo a cada técnica nova.</p>
+    <p>Mas no dia <strong>04 de novembro, às 20h,</strong> eu vou abrir Ao Vivo a <strong class="gold">Black Friday Infinita</strong>, com uma oferta que eu nunca fiz, com <strong>acesso vitalício</strong> à:</p>
+  </div>
+  <div class="wrap" style="margin-top:40px">
+    <div class="checks center-col reveal">
+      <img src="/img/check-reconstrucao.webp" alt="Reconstrução 360º Brows" width="899" height="219" loading="lazy">
+      <img src="/img/check-formacoes.webp" alt="Fio-a-fio, despigmentação, micro labial, design e posicionamento" width="899" height="254" loading="lazy">
+      <img src="/img/check-futuras.webp" alt="Todas as formações online que eu lançar daqui pra frente" width="899" height="286" loading="lazy">
+    </div>
+
+    <div class="gallery reveal">
+      <figure><img src="/img/protocolo-360.webp" alt="Protocolo 360º Brows" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="/img/be-brows.webp" alt="Be Brows, Técnica Fio a Fio" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="/img/chiaro.webp" alt="Método Chiaro, Despigmentação" width="1100" height="619" loading="lazy"></figure>
+      <figure><img src="/img/be-lips.webp" alt="Be Lips, A Micro Labial" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="/img/design-perfeito.webp" alt="Design Perfeito" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="/img/colorimetria.webp" alt="Colorimetria Avançada" width="1100" height="619" loading="lazy"></figure>
+      <figure><img src="/img/posicionamento.webp" alt="O Poder do Posicionamento" width="1100" height="612" loading="lazy"></figure>
+      <figure><img src="/img/maquina-de-vendas.webp" alt="Máquina de Vendas" width="1100" height="612" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NO FORNO ============ -->
+<section class="glow-gold">
+  <div class="wrap forno">
+    <div class="poster reveal"><img src="/img/brow-lamination.webp" alt="Em breve: Brow Lamination com Nutrição Folicular" width="900" height="1112" loading="lazy"></div>
+    <div class="reveal">
+      <p class="eyebrow">Em breve</p>
+      <h2 style="margin-top:12px">Todas as formações online que eu lançar daqui pra frente. <em class="gold">A próxima já está no forno:</em></h2>
+      <p><strong>Brow Lamination com Nutrição Folicular.</strong> Quando ela chegar, você já vai estar dentro, sem pagar de novo.</p>
+      <div style="margin-top:30px"><button type="button" class="btn js-open">Quero aprender com você pra sempre</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BÔNUS AO VIVO ============ -->
+<section class="bonus-sec">
+  <div class="wrap">
+    <div class="center reveal"><span class="bonus-badge">Exclusivo da live</span></div>
+    <h2 class="bonus-title reveal">Bônus incríveis para quem estiver <em class="gold">Ao Vivo</em></h2>
+    <p class="bonus-intro reveal">Esses presentes são só para quem estiver comigo na live de abertura. Depois, não se repetem.</p>
+    <div class="bonus-grid">
+      <div class="bonus reveal"><span class="tag">BÔNUS 01</span><div class="ico">🎁</div><h3 class="gold">Kit presente</h3><p>O Kit 360º chegando de presente na sua casa.</p></div>
+      <div class="bonus reveal"><span class="tag">BÔNUS 02</span><div class="ico">🏷️</div><h3 class="gold">Desconto de aluna</h3><p>Desconto nos meus produtos, pra sempre.</p></div>
+      <div class="bonus reveal"><span class="tag">BÔNUS 03</span><div class="ico">🤝</div><h3 class="gold">Suporte e certificado</h3><p>Meu suporte e o da minha equipe, lives comigo e certificado assinado por mim.</p></div>
+    </div>
+
+    <div class="group-cta reveal" style="margin-top:64px">
+      <p>Se você quer estar um passo à frente, pra sempre, entre no grupo. <strong class="gold">Lá, e somente lá,</strong> eu vou mandar o link da live e todos os detalhes da oferta.</p>
+      <button type="button" class="btn pulse js-open">Entrar no grupo</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFESSOR ============ -->
+<section class="band-green">
+  <div class="wrap prof">
+    <div class="photo reveal"><img src="/img/tulio-cotta.webp" alt="Túlio Cotta realizando procedimento" width="1000" height="1000" loading="lazy"></div>
+    <div class="reveal">
+      <p class="eyebrow">Conheça seu professor</p>
+      <h2 class="gold">Túlio Cotta</h2>
+      <p>Eu comecei do zero. Entregava marmitas e não sabia nem segurar uma pinça. Em 2015, virei micropigmentador em Belo Horizonte e cheguei a fazer 13 procedimentos por dia.</p>
+      <p>Em 2016, criei a técnica de fios Be Brows e abri meu primeiro studio. Depois vieram o Método Chiaro de despigmentação, a micro labial Be Lips e a Reconstrução 360º Brows, com <strong>produtos próprios registrados na Anvisa e na União Europeia.</strong></p>
+      <p>Hoje, a minha escola tem sede em Belo Horizonte e em Lisboa, e já formou <strong>MAIS DE 10 MIL profissionais no Brasil e no exterior.</strong> E toda vez que o mercado da beleza mudou, eu estava lá antes.</p>
+      <p><strong>Agora, eu quero você comigo. <span class="gold">PRA SEMPRE!</span></strong></p>
+      <div class="stats">
+        <div class="stat"><b class="gold">+10 mil</b><span>profissionais formadas</span></div>
+        <div class="stat"><b class="gold">BH · Lisboa</b><span>sedes da escola</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="glow-gold final">
+  <div class="wrap narrow reveal">
+    <img class="logo" src="/img/logo-black-infinita.webp" alt="Black Infinita" width="1100" height="550" loading="lazy">
+    <h2 class="sec-title">Você um passo à frente. <em class="gold">Pra sempre.</em></h2>
+    <p class="sec-sub">📌 Abertura Oficial: <strong>04 de Novembro, Ao Vivo às 20h</strong></p>
+    <div style="margin-top:34px"><button type="button" class="btn pulse js-open">Quero aprender com você pra sempre</button></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Túlio Cotta. Todos os direitos reservados.</div>
+</footer>
+
+<div class="sticky" id="sticky"><button type="button" class="btn js-open">Quero participar</button></div>
+
+<!-- ============ POP-UP DE CADASTRO ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="card-form">
+    <button type="button" class="modal-close" aria-label="Fechar">&times;</button>
+    <h3 class="gold" id="modal-title">Cadastre-se e participe da Live de Lançamento</h3>
+    <p class="lead">📌 <b>04 de Novembro, Ao Vivo às 20h</b><br>para garantir benefícios extras</p>
+    <form id="leadForm" novalidate>
+      <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Como você se chama?" required></div>
+      <div class="field"><label for="f-email">Seu melhor e-mail</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" required></div>
+      <div class="field"><label for="f-tel" id="tel-label">WhatsApp com DDD</label>
+        <div class="phone">
+          <button type="button" class="ddi-btn" id="ddi-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Escolher país">
+            <span class="flag" id="ddi-flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#009B3A"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10Z" fill="#FEDF00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.9.9" stroke="#fff" stroke-width=".9" fill="none"/></svg></span><span id="ddi-code">+55</span><span class="caret">▾</span>
+          </button>
+          <ul class="ddi-menu" id="ddi-menu" role="listbox">
+            <li role="option" data-c="BR" aria-selected="true"><span class="flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#009B3A"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10Z" fill="#FEDF00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.9.9" stroke="#fff" stroke-width=".9" fill="none"/></svg></span>Brasil <b>+55</b></li>
+            <li role="option" data-c="PT" aria-selected="false"><span class="flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#FF0000"/><path d="M2 0h9.2v20H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2Z" fill="#006600"/><circle cx="11.2" cy="10" r="4" fill="#FFCC00"/><circle cx="11.2" cy="10" r="2.3" fill="#FF0000"/><circle cx="11.2" cy="10" r="1.3" fill="#fff"/></svg></span>Portugal <b>+351</b></li>
+          </ul>
+          <input id="f-tel" name="telefone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="(31) 99999-9999" required>
+        </div>
+      </div>
+      <button class="btn block pulse" type="submit" id="f-btn">Quero participar</button>
+      <div class="form-msg" id="f-msg"></div>
+      <p class="form-note">🔒 Seus dados estão seguros.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ===================== CONFIGURAÇÃO ===================== */
+var CONFIG = {
+  LEAD_ENDPOINT: "/api/lead",   // função na Vercel que repassa para os 2 webhooks
+  THANK_YOU_URL: "https://pesquisa-black-infinita-tulio-cotta.lovable.app/"
+};
+/* ======================================================== */
+
+(function(){
+  // UTMs e parâmetros de campanha
+  var params = new URLSearchParams(location.search);
+  var utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','src','sck','fbclid','gclid'].forEach(function(k){ if(params.get(k)) utm[k]=params.get(k); });
+
+  // pop-up
+  var modal = document.getElementById('modal');
+  var nomeInput = document.getElementById('f-nome');
+  function openModal(){ modal.classList.add('open'); document.body.classList.add('lock'); setTimeout(function(){ try{ nomeInput.focus({preventScroll:true}); }catch(_){ } }, 250); }
+  function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('lock'); }
+  document.querySelectorAll('.js-open').forEach(function(b){ b.addEventListener('click', openModal); });
+  modal.querySelector('.modal-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+
+  // DDI (Brasil / Portugal) e máscara de telefone
+  var COUNTRIES = {
+    BR:{ddi:'55', label:'WhatsApp com DDD', ph:'(31) 99999-9999', min:10, max:11, err:'Digite seu WhatsApp com DDD.',
+        mask:function(v){ if(v.length>10) return '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7); if(v.length>6) return '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6); if(v.length>2) return '('+v.slice(0,2)+') '+v.slice(2); return v; }},
+    PT:{ddi:'351', label:'Telemóvel / WhatsApp', ph:'912 345 678', min:9, max:9, err:'Digite seu número com 9 dígitos.',
+        mask:function(v){ if(v.length>6) return v.slice(0,3)+' '+v.slice(3,6)+' '+v.slice(6); if(v.length>3) return v.slice(0,3)+' '+v.slice(3); return v; }}
+  };
+  var country = 'BR';
+  var tel = document.getElementById('f-tel'), ddiBtn = document.getElementById('ddi-btn'), ddiMenu = document.getElementById('ddi-menu');
+  function applyMask(){ var c=COUNTRIES[country]; tel.value = c.mask(tel.value.replace(/\D/g,'').slice(0,c.max)); }
+  function setCountry(code){
+    country = code; var c = COUNTRIES[code];
+    document.getElementById('ddi-code').textContent = '+'+c.ddi;
+    document.getElementById('ddi-flag').innerHTML = ddiMenu.querySelector('[data-c="'+code+'"] .flag').innerHTML;
+    document.getElementById('tel-label').textContent = c.label;
+    tel.placeholder = c.ph;
+    ddiMenu.querySelectorAll('li').forEach(function(li){ li.setAttribute('aria-selected', li.dataset.c===code ? 'true':'false'); });
+    applyMask();
+  }
+  function toggleMenu(open){ ddiMenu.classList.toggle('open', open); ddiBtn.setAttribute('aria-expanded', open?'true':'false'); }
+  ddiBtn.addEventListener('click', function(e){ e.stopPropagation(); toggleMenu(!ddiMenu.classList.contains('open')); });
+  ddiMenu.querySelectorAll('li').forEach(function(li){ li.addEventListener('click', function(){ setCountry(li.dataset.c); toggleMenu(false); tel.focus(); }); });
+  document.addEventListener('click', function(){ toggleMenu(false); });
+  tel.addEventListener('input', applyMask);
+
+  var form = document.getElementById('leadForm'), btn = document.getElementById('f-btn'), msg = document.getElementById('f-msg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = form.nome.value.trim(), email = form.email.value.trim().toLowerCase(), fone = form.telefone.value.replace(/\D/g,'');
+    var err = '';
+    if(nome.length<2) err='Digite seu nome.';
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) err='Digite um e-mail válido.';
+    else if(fone.length<COUNTRIES[country].min || fone.length>COUNTRIES[country].max) err=COUNTRIES[country].err;
+    if(err){ msg.textContent=err; msg.style.display='block'; return; }
+    msg.style.display='none';
+    btn.disabled=true; btn.textContent='Enviando...';
+
+    var lead = Object.assign({
+      nome:nome, email:email, telefone:fone, telefone_completo:COUNTRIES[country].ddi+fone,
+      pagina:location.origin+location.pathname, data_cadastro:new Date().toISOString()
+    }, utm);
+
+    try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
+    try{ (window.dataLayer=window.dataLayer||[]).push({event:'lead_black_infinita'}); }catch(_){}
+
+    var url = CONFIG.THANK_YOU_URL + (CONFIG.THANK_YOU_URL.indexOf('?')>-1?'&':'?') + 'email=' + encodeURIComponent(email);
+    var done=false, go=function(){ if(!done){ done=true; location.href=url; } };
+    fetch(CONFIG.LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead),keepalive:true}).then(go,go);
+    setTimeout(go, 4000);
+  });
+
+  // reveal on scroll
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }); },{threshold:.12});
+    els.forEach(function(el){ io.observe(el); });
+  } else els.forEach(function(el){ el.classList.add('in'); });
+
+  // botão fixo no celular: aparece depois do botão da primeira dobra
+  var sticky = document.getElementById('sticky'), heroBtn = document.querySelector('.hero-cta .btn');
+  window.addEventListener('scroll', function(){
+    sticky.classList.toggle('show', heroBtn.getBoundingClientRect().bottom < 0);
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
